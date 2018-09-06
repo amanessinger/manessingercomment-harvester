@@ -13,6 +13,8 @@ import (
 
 func AttachComment(baseDir string, c *Comment) (err error, dirname string, filename string, createPath bool) {
 
+	c.AuthorEmail = ""
+
 	if strings.HasPrefix(c.AttachTo, "comments/") {
 		// comment to a comment; strip comment file basename
 		dirname = path.Dir(c.AttachTo)
